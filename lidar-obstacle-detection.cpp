@@ -86,8 +86,7 @@ void clusterCloud(const pcl::PointCloud<pcl::PointXYZI>::Ptr& obstacle_cloud, st
     ec.extract(cluster_indices);
 }
 
-// Function to draw bounding boxes around clusters (fix header file not found)
-/*
+// Function to draw bounding boxes around clusters
 void drawBoundingBoxes(pcl::visualization::PCLVisualizer::Ptr& viewer, std::vector<pcl::PointCloud<pcl::PointXYZI>::Ptr>& clusters) {
     for (size_t i = 0; i < clusters.size(); ++i) {
         pcl::PointCloud<pcl::PointXYZI>::Ptr cluster = clusters[i];
@@ -99,7 +98,7 @@ void drawBoundingBoxes(pcl::visualization::PCLVisualizer::Ptr& viewer, std::vect
         // Add bounding box to viewer
         viewer->addCube(min_point.x, max_point.x, min_point.y, max_point.y, min_point.z, max_point.z, 1.0, 0.0, 0.0, "bbox_" + std::to_string(i));
     }
-}*/
+}
 
 // Function to process LiDAR data
 void processLiDARData(const std::vector<std::vector<std::string>>& data, pcl::PointCloud<pcl::PointXYZI>::Ptr& point_cloud) {
@@ -135,7 +134,6 @@ int main() {
     for (const auto& entry : std::filesystem::directory_iterator(directory_path)) {
         if (entry.path().extension() == ".csv") {
             std::string csv_file_path = entry.path().string();
-            std::cout << csv_file_path << std::endl;
 
             // Read CSV file
             std::vector<std::vector<std::string>> data;
@@ -170,8 +168,7 @@ int main() {
                     clusters.push_back(cluster);
                 }
 
-                // Visualization (fix missing header file)
-                /*
+                // Visualization
                 pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("LiDAR Viewer"));
                 viewer->setBackgroundColor(0, 0, 0);
                 viewer->addPointCloud<pcl::PointXYZI>(point_cloud, "original_cloud");
@@ -184,7 +181,7 @@ int main() {
                 while (!viewer->wasStopped()) {
                     viewer->spinOnce();
                 }
-                */
+                
             }
             else {
                 std::cerr << "Error processing CSV file: " << csv_file_path << std::endl;

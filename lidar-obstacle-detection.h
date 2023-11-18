@@ -22,7 +22,8 @@
 #include <pcl/common/centroid.h>
 #include <pcl/segmentation/conditional_euclidean_clustering.h>
 #include <pcl/common/transforms.h>
-// #include <pcl/visualization/pcl_visualizer.h>
+#include <pcl/common/common.h>
+#include <pcl/visualization/pcl_visualizer.h>
 
 
 // TODO: Reference additional headers your program requires here.

@@ -1,7 +1,4 @@
-﻿// lidar-obstacle-detection.h : Include file for standard system include files,
-// or project specific include files.
-
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 #include <fstream>
@@ -13,6 +10,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
+#include <pcl/common/pca.h>
 #include <pcl/common/common.h>
 #include <pcl/common/centroid.h>
 #include <pcl/common/transforms.h>
@@ -24,6 +22,8 @@
 #include <pcl/filters/filter.h>
 #include <pcl/filters/statistical_outlier_removal.h>
 #include <pcl/filters/voxel_grid.h>
+
+#include <pcl/io/ply_io.h>
 
 #include <pcl/segmentation/extract_clusters.h>
 #include <pcl/segmentation/conditional_euclidean_clustering.h>
